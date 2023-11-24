@@ -6,39 +6,43 @@
   }
 </script>
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<nav
+  class="navbar"
+  role="navigation"
+  aria-label="main navigation"
+  style="border-bottom: solid gray 1px;"
+>
   <div class="navbar-brand">
     <a href="/" class="navbar-item">
       <img src="logo.jpg" alt="virus" />
     </a>
     <span
-      on:click={toggleNav}
       class="navbar-burger"
+      class:is-active={isOpen}
+      on:click={toggleNav}
       aria-label="menu"
       aria-expanded="false"
-      class:is-active={isOpen}
     >
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
+      <span aria-hidden="true" />
+      <span aria-hidden="true" />
+      <span aria-hidden="true" />
     </span>
   </div>
   <div class="navbar-menu" class:is-active={isOpen}>
     <div class="navbar-start">
-      <a href="/" class="navbar-item" class:is-active={segment === undefined}
-        >Home</a
+      <a href="/" class="navbar-item" class:is-active={segment === undefined}>
+        Home
+      </a>
+      <a
+        href="/about"
+        class="navbar-item"
+        class:is-active={segment === "about"}
       >
-      <a href="/about" class="navbar-item" class:is-active={segment === "about"}
-        >About</a
-      >
+        About
+      </a>
     </div>
   </div>
 </nav>
 
 <style>
-  @media (min-width: 769px) {
-    nav {
-      border-bottom: solid gray 1px;
-    }
-  }
 </style>
